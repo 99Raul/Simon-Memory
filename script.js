@@ -8,12 +8,27 @@ const topRightPanel = document.querySelector('.top-right-panel');
 const bottomLeftPanel = document.querySelector('.bottom-left-panel');
 const bottomRightPanel = document.querySelector('.bottom-right-panel');
 
-// want sequence
+// function that select through panels randomly
+//game play
+
+const getRandomPanel = () => {
+	const panels = [
+		topRightPanel,
+		topLeftPanel,
+		bottomRightPanel,
+		bottomLeftPanel,
+	];
+	// getting the length of panels 4, then pick random index of that of (0 to 3)
+	// then parseInt it so it wont give bad math/ converts string to whole number/
+	return panels[parseInt(Math.random() * panels.length)];
+};
+
+// want sequence of panels in array
 const sequence = [
-	topLeftPanel,
-	topRightPanel,
-	bottomLeftPanel,
-	bottomRightPanel,
+	getRandomPanel(),
+	getRandomPanel(),
+	getRandomPanel(),
+	getRandomPanel(),
 ];
 
 // flashing function for panel
