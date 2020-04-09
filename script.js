@@ -43,10 +43,19 @@ const flash = (panel) => {
 		setTimeout(() => {
 			//inside time out get rid of active, when time out is done
 			panel.className = panel.className.replace(' active', '');
-			// the promise fulfilled
-			resolve();
+
+			// set another time out to wait incase a duplicate color is selected
+			setTimeout(() => {
+				// the promise fulfilled
+				resolve();
+			}, 250);
 		}, 1000);
 	});
+};
+
+// to see which panel is getting clicked on 
+const panelClicked = (panel) => {
+	console.log(panel);
 };
 
 // building async function that self executes

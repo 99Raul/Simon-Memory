@@ -7,14 +7,29 @@
 		<title>Simon Memory Game</title>
 	</head>
 	<body>
+		<!-- <!>-- Addded a call back to the div panels--<!> -->
 		<div>
-			<div class="panel top-left-panel"></div>
-			<div class="panel top-right-panel"></div>
+			<div
+				onclick="panelClicked(event.currentTarget)"
+				class="panel top-left-panel"
+			></div>
+
+			<div
+				onclick="panelClicked(event.currentTarget)"
+				class="panel top-right-panel"
+			></div>
 		</div>
-		
+
 		<div>
-			<div class="panel bottom-left-panel"></div>
-			<div class="panel bottom-right-panel"></div>
+			<div
+				onclick="panelClicked(event.currentTarget)"
+				class="panel bottom-left-panel"
+			></div>
+
+			<div
+				onclick="panelClicked(event.currentTarget)"
+				class="panel bottom-right-panel"
+			></div>
 		</div>
 		<div class="center"></div>
 		<script src="script.js"></script>
