@@ -18,17 +18,30 @@ const sequence = [
 
 // flashing function for panel
 // code will resolve after a certain amount of time, use promise to wrap timeouts to wait for something to happen
+// using promise resolve method to return promise that is resolved with given value
 
 const flash = (panel) => {
 	return new Promise((resolve, reject) => {
-		//inside the promise you want panel to turn white
+		//inside the promise you want panel to turn white // targeting css .active
 		panel.className += ' active';
 		//using set timeout to allow a function once after the interval of time
 		setTimeout(() => {
-			//inside time out get rid of active
-			panel.className = panel.className.replace(' active');
-			// the promise full filled
+			//inside time out get rid of active, when time out is done
+			panel.className = panel.className.replace(' active', '');
+			// the promise fulfilled
 			resolve();
-		}, 500);
+		}, 1000);
 	});
 };
+
+// building async function that self executes
+// inside the main , calling the flash of the different panels
+const main = async () => {
+	//loop through the sequence of panels
+	for (const panel of sequence) {
+		// used await since I don't want all the panel to flash at the same time
+		await flash(panel);
+	}
+};
+
+main();
