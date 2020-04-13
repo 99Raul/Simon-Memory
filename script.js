@@ -24,12 +24,9 @@ const getRandomPanel = () => {
 };
 
 // want sequence of panels in array
-const sequence = [
-	getRandomPanel(),
-	getRandomPanel(),
-	getRandomPanel(),
-	getRandomPanel(),
-];
+const sequence = [getRandomPanel()];
+let sequenceToGuess = [...sequence];
+//clone of sequence
 
 // flashing function for panel
 // code will resolve after a certain amount of time, use promise to wrap timeouts to wait for something to happen
@@ -53,19 +50,43 @@ const flash = (panel) => {
 	});
 };
 
-// to see which panel is getting clicked on 
+let canClick = false;
+// to see which panel is getting clicked on
 const panelClicked = (panel) => {
+	// if canClick is false return callback
+	// so user cant click while panels are flashing
+	if (!canClick) return;
 	console.log(panel);
+
+	const expectedPanel = sequenceToGuess.shift();
+	if (expectedPanel === panel) {
+		//check if the game is over
+		if (sequenceToGuess.length === 0) {
+			// start new round
+			sequence.push(getRandomPanel());
+			sequenceToGuess = [...sequence];
+			// call startFlashing when starting a new round
+			startFlashing();
+		}
+	} else {
+		// end game
+		alert('game over');
+	}
 };
 
 // building async function that self executes
-// inside the main , calling the flash of the different panels
-const main = async () => {
+// inside the startFlashing , calling the flash of the different panels
+const startFlashing = async () => {
+	canClick = false;
+
 	//loop through the sequence of panels
 	for (const panel of sequence) {
 		// used await since I don't want all the panel to flash at the same time
 		await flash(panel);
 	}
+	//until all the panels are done flashing then user can click
+	canClick = true;
 };
 
-main();
+// prevents you from clicking until flash sequence ends
+startFlashing();

@@ -11,42 +11,47 @@
 }
 
 .bottom-right-panel {
-	background-color: red;
+	background-color: #ff4136;
 	border-bottom-right-radius: 200px;
 }
 
 .bottom-left-panel {
-	background-color: blue;
+	background-color: #0074d9;
 	border-bottom-left-radius: 200px;
 }
 
 .top-left-panel {
-	background-color: yellow;
+	background-color: #ffdc00;
 	border-top-left-radius: 200px;
 }
 
 .top-right-panel {
-	background-color: green;
+	background-color: #2ecc40;
 	border-top-right-radius: 200px;
 }
 
 body {
-	background-color: gray;
+	background-color: #111111;
 	text-align: center;
 	margin-top: 100px;
 }
 
 .center {
 	display: inline-block;
-	position: aboslute;
+	position: absolute;
 	width: 200px;
 	height: 200px;
-	background-color: black;
-	top: 135px;
-	left: 540px;
+	background-color: #111111;
+	top: 260px;
+	left: 400px;
 	border-radius: 100%;
 }
 
 .active {
 	background-color: white;
+}
+
+h1 {
+	color: whitesmoke;
+	text-align: center;
 }
