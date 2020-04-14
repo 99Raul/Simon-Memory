@@ -90,3 +90,10 @@ const startFlashing = async () => {
 
 // prevents you from clicking until flash sequence ends
 startFlashing();
+
+// reset the game board
+const reset = document.querySelector('.reset');
+reset.addEventListener('click', onReset);
+function onReset() {
+	location.reload();
+}

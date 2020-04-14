@@ -38,13 +38,14 @@ body {
 
 .center {
 	display: inline-block;
-	position: absolute;
-	width: 200px;
-	height: 200px;
+	position: relative;
+	width: 300px;
+	height: 80px;
 	background-color: #111111;
-	top: 260px;
-	left: 400px;
-	border-radius: 100%;
+	text-align: center;
+	border: 6px outset #e3e342;
+	border-radius: 16px 16px 16px 16px;
+	/* added effect from box shadow css generator */
 }
 
 .active {
@@ -54,4 +55,21 @@ body {
 h1 {
 	color: whitesmoke;
 	text-align: center;
+}
+
+.reset {
+	border-color: #c43c35;
+	background: #c43c35;
+	color: #ffd3d3;
+	padding: 12px 30px;
+	text-transform: uppercase;
+	display: grid;
+	text-align: center;
+	position: relative;
+	display: inline;
+}
+
+.reset:hover {
+	background-color: #f8f8ff;
+	color: #606060;
 }
