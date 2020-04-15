@@ -9,6 +9,20 @@
 	<body>
 		<header>
 			<h1>Simon Memory</h1>
+			<!-- Trigger/Open The Modal -->
+			<button id="myBtn">How to Play</button>
+
+			<!-- The Modal -->
+			<div id="myModal" class="modal">
+				<!-- Modal content -->
+				<div class="modal-content">
+					<span class="close">&times;</span>
+					<p>
+						Object of the game is to correctly repeat a longer and longer
+						sequence of signals
+					</p>
+				</div>
+			</div>
 		</header>
 		<!-- <!>-- Addded a call back to the div panels--<!> -->
 		<div>
@@ -36,6 +50,7 @@
 		</div>
 		<div class="center">
 			<button class="reset">Reset</button>
+			<div id="level">Simon level: <span>0</span></div>
 		</div>
 		<script src="script.js"></script>
 	</body>
