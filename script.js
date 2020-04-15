@@ -50,6 +50,7 @@ const flash = (panel) => {
 	});
 };
 
+let score = 0;
 let canClick = false;
 // to see which panel is getting clicked on
 const panelClicked = (panel) => {
@@ -63,6 +64,8 @@ const panelClicked = (panel) => {
 		//check if the game is over
 		if (sequenceToGuess.length === 0) {
 			// start new round
+			score++;
+			scoreDisplay.innerHTML = score;
 			sequence.push(getRandomPanel());
 			sequenceToGuess = [...sequence];
 			// call startFlashing when starting a new round
@@ -128,4 +131,4 @@ window.onclick = function (event) {
 
 //-----------------------------------------------------------------------------------
 //Bonus - Tracking points/score
-const $level_ = document.querySelector('#level>span');
+const scoreDisplay = document.querySelector('.score');

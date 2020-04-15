@@ -39,12 +39,13 @@ body {
 .center {
 	display: inline-block;
 	position: relative;
-	width: 300px;
-	height: 80px;
+	width: 250px;
+	height: 120px;
 	background-color: #111111;
 	text-align: center;
 	border: 6px outset #e3e342;
 	border-radius: 16px 16px 16px 16px;
+	margin-top: 10px;
 }
 
 .active {
@@ -52,8 +53,9 @@ body {
 }
 
 h1 {
-	color: whitesmoke;
+	color: #2ecc40;
 	text-align: center;
+	font-size: 35px;
 }
 
 .reset {
@@ -62,10 +64,12 @@ h1 {
 	color: #ffd3d3;
 	padding: 12px 30px;
 	text-transform: uppercase;
-	display: grid;
 	text-align: center;
 	position: relative;
 	display: inline;
+	border: 6px;
+	border-radius: 16px 16px 16px 16px;
+	margin-top: 3px;
 }
 
 .reset:hover {
@@ -73,13 +77,14 @@ h1 {
 	color: #606060;
 }
 
-#level {
-	font-size: 30px;
+h2 {
 	color: #f8f8ff;
-
-	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 0px;
 }
-
+h3 {
+	color: #f8f8ff;
+}
 /* The Modal (background) */
 .modal {
 	display: none; /* Hidden by default */
@@ -100,7 +105,7 @@ h1 {
 	margin: 15% auto; /* 15% from the top and centered */
 	padding: 20px;
 	border: 1px solid #888;
-	width: 80%; /* Could be more or less, depending on screen size */
+	width: 50%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
@@ -116,4 +121,11 @@ h1 {
 	color: black;
 	text-decoration: none;
 	cursor: pointer;
+}
+
+#myBtn {
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	padding: 5px 5px;
+	border-radius: 10px 10px 10px 10px;
 }
